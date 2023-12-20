@@ -6,14 +6,6 @@
   ],
   "plugins": ["import", "prettier"],
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "parser": "flow",
-        "endOfLine": "auto"
-      }
-    ],
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
     "react-hooks/exhaustive-deps": "off",
@@ -31,8 +23,6 @@
         "props": false
       }
     ],
-    "quotes": ["error", "single", { "allowTemplateLiterals": false }],
-    "camelcase": "off",
     "react/function-component-definition": [
       2,
       { "namedComponents": ["arrow-function", "function-declaration"] }
