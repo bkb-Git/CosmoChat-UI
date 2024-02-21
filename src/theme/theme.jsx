@@ -109,17 +109,6 @@ const theme = createTheme({
       textTransform: 'none',
     },
   },
-  //   breakpoints: {
-  //     values: {
-  //       xs: 320,
-  //       sm: 576.5,
-  //       tab: 767.5,
-  //       md: 1024,
-  //       lg: 1280,
-  //       xl: 1536,
-  //       xxl: 1921,
-  //     },
-  //   },
 });
 
 export default theme;

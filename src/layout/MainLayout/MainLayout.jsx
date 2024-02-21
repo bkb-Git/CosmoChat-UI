@@ -1,20 +1,48 @@
-import { Outlet } from 'react-router';
-import { Grid } from '@mui/material';
+import { useEffect } from 'react';
+import { Outlet, useLoaderData, useNavigate } from 'react-router';
+import { CircularProgress, Grid } from '@mui/material';
+
+import Header from './Header';
+
+import styles from './styles';
 
 const MainLayout = () => {
-  return (
-    <Grid xs={12} container justifyContent="center" alignItems="center">
+  const navigate = useNavigate();
+  const {
+    data: { isAuthenticated },
+  } = useLoaderData();
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!isAuthenticated) navigate('/login');
+    }, 3000);
+  }, []);
+
+  if (!isAuthenticated)
+    return (
       <Grid
-        xs={12}
+        container
         justifyContent="center"
         alignItems="center"
-        textAlign="center"
+        height="100vh"
+        xs={12}
       >
-        Header
+        <CircularProgress size={50} />
       </Grid>
-      <Grid xs={12} justifyContent="center" alignItems="center">
+    );
+
+  const renderContent = () => {
+    return (
+      <Grid {...styles.contentGridProps}>
         <Outlet />
       </Grid>
+    );
+  };
+
+  return (
+    <Grid {...styles.mainGridProps}>
+      <Header />
+      {renderContent()}
     </Grid>
   );
 };
