@@ -4,6 +4,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     xs: 12,
+    px: { xs: 2, sm: 3 },
   },
   contentGridProps: {
     xs: 12,

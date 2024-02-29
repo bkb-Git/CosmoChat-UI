@@ -2,24 +2,9 @@ import { RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
 
 import MainLayout from './layout/MainLayout';
-// import AuthenticationLayout from './layout/AuthenticationLayout';
+import Welcome from './pages/Welcome';
 
 const App = () => {
-  // const AuthRoute = {
-  //   path: '/login',
-  //   element: <AuthenticationLayout />,
-  //   children: [
-  //     {
-  //       index: true,
-  //       element: <div>login</div>,
-  //     },
-  //     {
-  //       path: 'signup',
-  //       element: <div>signup </div>,
-  //     },
-  //   ],
-  // };
-
   const MainAppRoute = {
     path: '/',
     element: <MainLayout />,
@@ -31,7 +16,7 @@ const App = () => {
     children: [
       {
         index: true,
-        element: <div>Hello</div>,
+        element: <Welcome />,
       },
       {
         path: 'chat',

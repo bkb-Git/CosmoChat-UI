@@ -2,7 +2,6 @@ const styles = {
   headerGridProps: {
     container: true,
     xs: 12,
-    px: 2,
     justifyContent: 'space-between',
     alignItems: 'center',
     textAlign: 'center',
